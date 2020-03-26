@@ -22,6 +22,12 @@
             <artifactId>spark-core_${scala.binary.version}</artifactId>
             <version>${taco.sparkcore.version}</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${taco.junit.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 </project>

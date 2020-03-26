@@ -41,8 +41,8 @@ object StructDataType {
     val sc = getSparkContent
     val tacoSqlContext = getSqlContext
     val schema = getSchema
-    val people = sc.textFile("/Users/tacoxiang/Documents/code/github/Bigdata/" +
-      "tacoSparksql/src/main/resources/experiment/people")
+    val filePath = StructDataType.getClass.getClassLoader.getResource("experiment/people").getPath
+    val people = sc.textFile(filePath)
     val rowRdd = people.map(_.split(" ")).map(element => Row(element(0), element(1).trim.toInt))
     val peopleDf = tacoSqlContext.createDataFrame(rowRdd, schema)
 
